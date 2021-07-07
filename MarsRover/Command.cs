@@ -4,9 +4,8 @@ namespace MarsRover
     public class Command
     {
         public string CommandType { get; set; }
-        public int NewPostion { get; set; }
+        public int NewPosition { get; set; }
         public string NewMode { get; set; }
-
 
         public Command() { }
 
@@ -26,7 +25,21 @@ namespace MarsRover
             {
                 throw new ArgumentNullException(commandType, "Command type required.");
             }
-            NewPostion = value;
+            NewPosition = value;
+        }
+        public Command(string commandType, string newMode)
+        {
+            CommandType = commandType;
+            if (String.IsNullOrEmpty(commandType))
+            {
+                throw new ArgumentNullException(commandType, "Command type required.");
+            }
+            NewMode = newMode;
+            if (String.IsNullOrEmpty(newMode))
+            {
+                throw new ArgumentNullException(commandType, "Command type required.");
+            }
+           
         }
 
     }
