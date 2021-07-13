@@ -26,11 +26,10 @@ namespace MarsRoverTests
         public void ConstructorSetsName()
         {
 
-            string testName = "Charles";
-            Message message1 = new Message(testName);
-            Assert.IsTrue(testName == message1.Name);
-            Assert.AreEqual(testName, message1.Name);
-            Console.WriteLine();
+            Message newMessage = new Message("Charles", commands);
+            Assert.IsTrue(newMessage.Name == "Charles");
+            Assert.AreEqual(newMessage.Name, "Charles");
+            
         }
         [TestMethod]
         public void ConstructorSetsCommandsField()

@@ -17,7 +17,7 @@ namespace MarsRoverTests
         [TestMethod]
         public void ConstructorSetsDefaultMode()
         {
-            Rover newMode = new Rover(0);
+            Rover newMode = new Rover(0,"NORMAL");
             Assert.AreEqual(newMode.Mode, "NORMAL");
         }
 
@@ -30,7 +30,7 @@ namespace MarsRoverTests
         [TestMethod]
         public void RespondsCorrectlyToModeChangeCommand()
         {
-            Rover MODE_CHANGE = new Rover("LOW_POWER");
+            Rover MODE_CHANGE = new Rover(0,"LOW_POWER");
             Assert.AreEqual(MODE_CHANGE.Mode, "LOW_POWER");
         }
         [TestMethod]

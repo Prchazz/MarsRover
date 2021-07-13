@@ -7,20 +7,20 @@ namespace MarsRover
         public int Position { get; set; }
         public int GeneratorWatts { get; set; }
 
-        public Rover(int position)
+        public Rover(int position, string mode = "NORMAL", int generatorWatts = 110)
         {
-            Position = position;
-            Mode = "NORMAL";
-            GeneratorWatts = 110;
+            this.Position = position;
+            this.Mode = mode;
+            this.GeneratorWatts = generatorWatts;
 
         }
 
-        public Rover(string mode)
-        {
-            Mode = mode;
+        //public Rover(string mode)
+        //{
+        //    this.Mode = mode;
             
 
-        }
+        //}
         public void ReceiveMessage(Message message)
         {
             foreach (var item in message.Commands)
